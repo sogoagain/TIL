@@ -96,6 +96,8 @@
 
 - [테스트 주도 개발 (Test-driven development) 실천 연습 저장소](https://github.com/sogoagain/tdd-exercises)
 - [JUnit5 - 하나의 테스트 메서드에서 여러 테스트 케이스 수행하기](https://github.com/sogoagain/sogoagain.github.com/blob/master/_posts/2019-06-17-JUnit5-Parameterized-Test.md)
+- [(SpringCamp2013) TDD 라이브](https://github.com/sogoagain/TIL/blob/master/seminar/SpringCamp2013-TDD라이브.md)
+- [[수요지식회] Ginkgo - Go 언어 개발자를 위한 BDD 테스팅 프레임워크](https://github.com/sogoagain/TIL/blob/master/seminar/Go-언어-개발자를-위한-BDD-테스팅-프레임워크.md)
 
 <a name="algorithm">
 
@@ -109,11 +111,6 @@
 
 ### WEB
 
-- [HTML/CSS 기초 연습 공간](https://github.com/sogoagain/TIL/tree/master/HTML5CSS3)
-- [Javascript 기초 연습 공간](https://github.com/sogoagain/TIL/tree/master/JavaScript)
-- [JSP 실습](https://github.com/sogoagain/TIL/tree/master/JSP)
-- [ASP.NET 공부 정리(예제)](https://github.com/sogoagain/asp.net-web-programming)
-- [Spring-Boot, JPA로 질문/답변 게시판 구현 과정 - 박재성님 강의](https://github.com/sogoagain/springboot-qna-board)
 - [HTTP 메시지 - HTTP Requests](https://sogoagain.github.io/2019/08/03/HTTP-메시지-HTTP-Requests/)
 - [SpringBoot2 & ReactJS Boilerplate](https://github.com/sogoagain/springboot-react-boilerplate)
 
@@ -136,8 +133,6 @@
 ### Programing Language
 
 - [복사 생성자(Copy Constructor), 소멸자(Destructor)를 이용한 '='연산자 오버로딩](https://github.com/sogoagain/sogoagain.github.com/blob/master/_posts/2017-01-14-대입연산자오버로딩.md)
-- [JAVA 예제 실습](https://github.com/sogoagain/TIL/tree/master/JAVA)
-- [도서 '빅 너드 랜치의 코틀린 프로그래밍' 실습 저장소](https://github.com/sogoagain/kotlin-programming-the-big-nerd-ranch-guide)
 - [코틀린(Kotlin)에서의 null 안전 처리](https://sogoagain.github.io/2019/08/20/코틀린-Kotlin-에서의-null-안전-처리/)
 
 <a name="data_structure">
@@ -158,6 +153,7 @@
 ### Computer Architecture
 
 - [SimpleScalar를 이용한 Cache Simulation](https://github.com/sogoagain/sogoagain.github.com/blob/master/_posts/2017-06-27-SimpleScalar를%20이용한%20Cache%20Simulation.md)
+- [컴퓨터 개념 및 실습 - 서울대학교 공과대학 민상렬 교수님 강의](https://github.com/sogoagain/TIL/tree/master/컴퓨터-개념-및-실습)
 
 <a name="db">
 
@@ -191,12 +187,15 @@
 <a name="devops">
 
 ### Devops
+
 - [IntelliJ에서 Docker에 올려진 Tomcat으로 Web Application 배포하기](https://github.com/sogoagain/sogoagain.github.com/blob/master/_posts/2019-03-08-IntelliJ에서-Docker에-올려진-Tomcat으로-웹앱-배포하기.md)
 
 <a name="mistake_notes">
 
 ### 실수노트
+
 - [캐싱된 메서드는 변경 불가능한(Immutable) 객체를 반환토록 하자](https://sogoagain.github.io/2019/12/06/실수노트-캐싱된-메서드는-변경-불가능한-Immutable-객체를-반환토록-하자/)
+- [JavaScript에서 동일한 이벤트 리스너는 단 한 번만 등록하자](https://sogoagain.github.io/2020/04/29/실수노트-JavaScript에서-동일한-이벤트-리스너는-단-한-번만-등록하자/)
 
 <a name="etc">
 
