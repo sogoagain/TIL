@@ -41,54 +41,12 @@
 
 ### Project
 
-- [도서 출처 표기 문구 생성기](https://github.com/sogoagain/book-citation-generator) (2020년 ~ 진행중)
-  - 팀구성: 개인
-  - 글을 작성할 때 도서의 문구를 인용하면 출처 표기를 해야하는데, 이 때 사용할 수 있도록 출처표기법에 따라 문구를 생성해주는 웹 사이트
-    - 사용자 스토리 기반의 이슈 생성
-    - 칸반 보드를 이용한 프로젝트 관리
-    - 다음(Kakao) 검색 API 활용
-  - 기술요소: ReactJS, Node.js
-
+- [도서 출처 표기 문구 생성기](https://github.com/sogoagain/book-citation-generator) (2020년 ~ 운영)
 - [SpringBoot2 & ReactJS Boilerplate](https://github.com/sogoagain/springboot-react-boilerplate) (2020년)
-  - 팀구성: 개인
-  - SpringBoot2 & ReactJS를 사용하는 환경에서 신속히 개발환경을 구축하기 위한 Boilerplate
-    - 입력된 단어를 저장하는 간단한 Application
-    - SpringBoot2 환경 테스트 코드 작성
-  - 기술요소: SpringBoot2, ReactJS, And Design
-
 - [음성인식 호텔 객실 제어 어플리케이션](https://github.com/sogoagain/android-stt-hotel-room-control) (2018년)
-  - 팀구성: 안드로이드 개발1, 관리자 웹 개발1, 객실/관리 서버 개발2, DB 개발1
-  - 음성 명령으로 호텔 객실을 제어하는 파일럿 프로젝트
-    - 팀장으로서 전체 시스템 구조 설계
-    - Android Application 개발
-    - 음성 인식된 문장에서 제어할 개체와 명령을 분리하여 처리하는 알고리즘 설계
-  - 기술요소: JAVA, Android, STT, 간단한 자연어 처리
-
 - [모바일 센싱 프로그래밍](https://github.com/sogoagain/android-mobile-system-programming) (2017년)
-  - 팀구성: 개인
-  - 배터리를 효율적으로 사용하는 모바일 센싱 프로그래밍 (총 3개 어플리케이션)
-    - ProximityAlarm: 위치기반 근접 경보 알림 어플리케이션
-    - EncounterMonitor: 블루투스를 이용해 특정 사람과 만났던 시간을 기록하는 어플리케이션
-    - ActivityTracker: 사용자 활동 모니터링 어플리케이션
-  - Energy Efficient Sensing을 위한 센싱 알고리즘 설계
-  - Battery Historian을 이용한 테스팅으로 알고리즘 최적화
-  - 기술요소: JAVA, Android, Energy Efficient Sensing
-
 - [운영체제 페이지 교체 시뮬레이션](https://github.com/sogoagain/page-replacement-simulation) (2017년)
-  - 팀구성: 설계1, 개발4, 테스트 케이스 구성2
-  - 운영체제 페이지 교체 알고리즘별 성능 비교를 위한 시뮬레이션 프로그램
-    - 팀의 리더로서 프로젝트 진행
-    - 디자인 패턴을 활용한 객체지향 디자인 설계 및 개발
-    - 참고문헌을 활용한 테스트 케이스 구성
-  - 기술요소: C++, Operating System, Design Pattern
-
- - [3D MP3 Player](https://github.com/sogoagain/opengl-bvh-music-player) (2016년)
-   - [소개자료](https://github.com/sogoagain/opengl-bvh-music-player/blob/master/JUDY_Introduce.pdf)
-   - 팀구성: 개인
-   - 음악 장르에 따라 3D캐릭터가 춤을 추는 MP3 플레이어
-     - OpenGL을 활용한 그래픽 프로그래밍
-     - BVH를 활용한 모션 캡처 데이터 적용
-   - 기술요소: C++, OpenGL, bvh
+- [3D MP3 Player](https://github.com/sogoagain/opengl-bvh-music-player) (2016년)
 
 <a name="tdd">
 
