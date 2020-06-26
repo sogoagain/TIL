@@ -41,6 +41,7 @@
 
 ### Project
 
+- [기계학습을 활용한 영상 인식 가위바위보 게임](https://github.com/sogoagain/rock-paper-scissors-vision) (2020년)
 - [도서 출처 표기 문구 생성기](https://github.com/sogoagain/book-citation-generator) (2020년 ~ 운영)
 - [SpringBoot2 & ReactJS Boilerplate](https://github.com/sogoagain/springboot-react-boilerplate) (2020년)
 - [음성인식 호텔 객실 제어 어플리케이션](https://github.com/sogoagain/android-stt-hotel-room-control) (2018년)
