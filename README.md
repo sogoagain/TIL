@@ -41,6 +41,10 @@
 
 ### Project
 
+- [Scrambling Text](https://github.com/sogoagain/scrambling-text-js) (2020년)
+- [창업하자! 아이디어는 내게 맡겨!](https://github.com/sogoagain/idea-box-frontend) (2020년)
+  - [Front-end](https://github.com/sogoagain/idea-box-frontend)
+  - [Back-end](https://github.com/sogoagain/idea-box-api)
 - [기계학습을 활용한 영상 인식 가위바위보 게임](https://github.com/sogoagain/rock-paper-scissors-vision) (2020년)
 - [도서 출처 표기 문구 생성기](https://github.com/sogoagain/book-citation-generator) (2020년 ~ 운영)
 - [SpringBoot2 & ReactJS Boilerplate](https://github.com/sogoagain/springboot-react-boilerplate) (2020년)
