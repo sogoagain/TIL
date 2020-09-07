@@ -1,4 +1,4 @@
-# 우아한테크러닝 3기 - React & TypeScript
+# 우아한테크러닝 3기 - 1. React & TypeScript
 
 ## 강의 목표
 
