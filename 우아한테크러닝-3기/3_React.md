@@ -136,6 +136,8 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 ### React 만들기
 
+> [참고](https://gist.github.com/ibare/c736f63fba835c172e60aa98a996dada)
+
 - React의 사상을 이해하는데 문제가 없을 정도의 핵심적인 부분들만 구현해 보는 것이다.
   - 이러한 사상을 이해하게 되면 '이 부분은 이렇게 써야겠구나' 혹은 '구조적으로 이렇게 때문에 이렇게 써야되는 구나'를 알게된다.
   - 예) Hook은 왜 이렇게 써야하지?
