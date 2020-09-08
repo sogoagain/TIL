@@ -109,3 +109,64 @@ function() {};
 // 프로그래밍에서 단 한 번만 호출되는 함수가 필요할 때 많이 사용한다.
 (function() {})();
 ```
+
+#### 고차 함수 (Higher-order function)
+
+- 하나 이상의 함수를 인자로 받는다.
+- 함수를 결과로 반환한다.
+
+> 형태에 익숙해지는 것이 중요하다. 사람은 형태가 익숙하지 않으면 낯설어한다.
+
+```JavaScript
+// 함수는 인자에 값이 위치하고, 리턴할 때도 값이 위치한다.
+function foo(x) {
+  x();
+  
+  // 함수도 값이므로 함수를 리턴할 수 있다.
+  // 이를 이용해 함수를 합성할 수 있다.
+  return function() {
+  };
+}
+
+// 함수도 값이므로 인자로 함수를 전달할 수 있다.
+// 이런 함수를 보통 Callback 함수라고 한다.
+const bar = foo(function() {});
+```
+
+#### 그 외 여러가지 함수의 형태
+
+- 함수 표현식에서 재귀 호출
+
+```JavaScript
+// 함수 표현식에서 재귀 호출을 하기 위해서는
+const foo = function foo() {
+  // 함수 이름이 필요하다.
+  // 여기서 foo는 const로 선언된 foo가 아닌 함수 foo다.
+  foo();
+}
+```
+
+- 익명 함수
+
+```JavaScript
+// 재귀 호출이 아닌 상황에서는 함수 이름을 생략할 수 있다. (익명 함수)
+const foo = function(x) {
+  return x * 2;
+}
+```
+
+- Arrow function expression
+  - Arrow function은 이름이 없기 때문에 재귀 호출을 할 수 없다.
+
+```JavaScript
+// 함수는 어떤 상황에서도 값을 반환한다. (undefined 포함)
+// Arrow function을 이용해 한 줄로 함수를 표현할 수 있다. (람다식으로 불리기도 한다.)
+const foo = (x) => x * 2;
+
+// 화살표 함수의 여러 형태
+const i = () => 10;
+const j = (x, y) => x * y;
+const k = (x, y) => {
+  return x * 2;
+}
+```
