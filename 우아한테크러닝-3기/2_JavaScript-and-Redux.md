@@ -418,3 +418,134 @@ function foo(a) {
   1. [자바스크립트의 함수](https://medium.com/ibare-story/e252506f8525)
   2. [프로그래밍 — 단순한 기능, 기능의 결합, 의미의 부여](https://medium.com/ibare-story/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EB%8B%A8%EC%88%9C%ED%95%9C-%EA%B8%B0%EB%8A%A5-%EA%B8%B0%EB%8A%A5%EC%9D%98-%EA%B2%B0%ED%95%A9-%EC%9D%98%EB%AF%B8%EC%9D%98-%EB%B6%80%EC%97%AC-1d4ab9d59415)
   3. [Javascript Boot Camp](https://fastcampus-js-bootcamp.herokuapp.com/)
+  
+## Flux Architecture
+
+- Application은 수많은 UI 요소(컴포넌트)가 중첩되어 구성된다.
+  - 각 UI 요소에서는 데이터들이 사용되는데, 특정 데이터들은 여러 컴포넌트에서 공유되는 상황이 발생한다.
+- Flux Architecture의 컨셉
+  - Application에서 사용되는 모든 상태를 하나의 store에 모아놓고, 이 상태들을 모든 컴포넌트에 내리자
+  - 각 컴포넌트들은 흘러가는 데이터 중 필요한 것만 뽑아서 사용하면 되지 않을까?
+
+### 기존에 이러한 개념이 불가능 했던 이유
+- 상태를 나타내는 데이터가 500개 정도 있다고 가정하자.
+- 이 중 하나의 데이터만 바뀌어도 모든 UI 요소들을 다시 그려야 한다.
+- 화면이 전체적으로 깜빡거린다.
+- 일부분만 변경하려면 모든 UI 요소가 주기적으로 관심있는 데이터가 바뀌었는지 확인해야 한다.
+  
+### 이제는 가능한 이유
+- React가 Virtual DOM이라는 개념을 들고 나왔다.
+  - 기존에는 DOM에 직접 접근해서 UI를 변경했는데, 이제는 React가 VDOM을 만들고 이 VDOM을 DOM으로 연결한다.
+  - 즉, JSX > VDOM > DOM
+  - 상태가 변경되면 변경된 상태에 해당하는 새로운 VDOM(version 2)를 만들고 기존 VDOM(version 1)과 비교하여 다른 부분만 실제 DOM에 반영한다.
+  - 이런 컨셉으로 미친듯한 깜빡임을 발생하지 않도록 하며 속도도 굉장히 빠르다. (React에서 VDOM의 diff연산이 굉장히 좋은 알고리즘으로 구현되었다고 광고한다.)
+- 또한, Redux가 나오면서 Flux Architecture를 쉽게 구성할 수 있도록 도와줘서 큰 히트를 쳤다.
+
+### Redux 만들어보기
+
+- Redux는 `Pub/Sub model`이다.
+  - React와 상관 없다.
+  - 상태가 변경되었을 때 알람을 받고 싶으면 구독(subscribe)해. 그럼 상태가 변경되었을 때 알려줄게(publish)
+
+#### redux.js
+
+- 하나의 Application은 하나의 store를 갖는다.
+  - store는 객체다.
+- 제공해야하는 기능
+  1. store(객체)를 만드는 함수를 제공한다 - `createStore()`
+  2. store가 생성되면 action을 호출할 수 있는 함수를 제공한다. - `dispatch()`
+  3. store가 변경 통보를 구독할 수 있는 함수를 제공한다. - `subscribe()`
+- state는 어떻게 바꿀 수 있을까?
+  - Application 개발자가 만들어 주어야 한다.
+  - 만일, 컴포넌트가 store(객체)의 상태를 직접 바꾸면 어떻게 될까?
+  - 다른 컴포넌트가 바뀐 것을 통보 받는데 문제가 생긴다.
+  - 그래서 store를 생성할 때 제공해주는 dispatch를 이용해 Redux에서 상태를 변경할 수 있도록 한다.
+  - Application 개발자는 상황에 맞게 변경된 상태를 반환하는 `reducer`를 작성한다.
+  - `reducer`를 호출할 때 현재 상태를 전달한다.
+  - 그런데, 어떤 상태를 바꿔야할까? 이는 액션 타입을 이용해 나타낸다.
+- state는 immutable 해야한다.
+  - Redux 개발자는 Application 개발자에게 reducer에서 새로은 state를 return 할 때는 항상 새로운 객체로 만들어서 return 하라고 애절하게 부탁한다.
+  - 그래야 state가 변경되었는지 확인 할 수 있기 때문이다.
+
+```JavaScript
+export function createStore(reducer) {
+  // 클로저로 상태를 숨긴다.
+  let state;
+  const listeners = [];
+  
+  const getState = () => ({...state});
+  
+  // dispatch를 제공함으로써 컴포넌트에서 action을 호출할 수 있다.
+  const dispatch = (action) => {
+    state = reducer(state, action);
+    // state가 변경되었으므로 publish한다.
+    listeners.forEach(fn => fn());
+  }
+  
+  // subscribe 할 수 있는 방법을 제공한다.
+  const subscribe = (fn) => {
+    listeners.push(fn);
+  }
+  
+  return {
+    getState,
+    dispatch,
+    subscribe,
+  }
+}
+```
+
+#### index.js
+
+```JavaScript
+import { createStore } from './redux.js';
+
+// 액션을 상수로 선언한 것을 액션 타입이라고 부른다.
+const INCREMENT = 'increment';
+const RESET = 'reset';
+
+function reducer(state = {}, action) {
+  if (action.type === INCREMENT) {
+    return {
+      ...state,
+      count: state.count ? state.count + 1: 1,
+    }
+  } else if (action.type === RESET) {
+    return {
+      ...state,
+      count: action.resetCount,
+    }
+  }
+  return state;
+}
+
+function actionCreator(type, data) {
+  return {
+    ...data,
+    type: type,
+  }
+}
+
+function increment() {
+  store.dispatch(actionCreator(INCREMENT));
+}
+
+function reset() {
+  store.dispatch(actionCreator(RESET, { resetCount: 10 }));
+}
+
+const store = createStore(reducer);
+
+// 이 함수가 호출되면 reducer의 store가 바뀌었다는 뜻이다.
+function update() {
+  console.log(store.getState());
+}
+
+store.subscribe(update);
+
+increment();
+
+console.log(store.getState());
+```
+
+> [참고](https://gist.github.com/ibare/1ed63de0c09c94a7ac79713d57b80f8d)
