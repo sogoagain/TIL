@@ -59,6 +59,7 @@
 ### 우아한테크러닝 3기 "React&TypeScript" 
 
 - [1. TypeScript & React](https://github.com/sogoagain/TIL/blob/master/%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC%EB%9F%AC%EB%8B%9D-3%EA%B8%B0/1_TypeScript-and-React.md)
+- [2. JavaScript & Redux](https://github.com/sogoagain/TIL/blob/master/%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC%EB%9F%AC%EB%8B%9D-3%EA%B8%B0/2_JavaScript-and-Redux.md)
 
 <a name="tdd">
 
