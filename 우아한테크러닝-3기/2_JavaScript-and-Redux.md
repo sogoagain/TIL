@@ -443,6 +443,8 @@ function foo(a) {
 
 ### Redux 만들어보기
 
+> [참고](https://gist.github.com/ibare/1ed63de0c09c94a7ac79713d57b80f8d)
+
 - Redux는 `Pub/Sub model`이다.
   - React와 상관 없다.
   - 상태가 변경되었을 때 알람을 받고 싶으면 구독(subscribe)해. 그럼 상태가 변경되었을 때 알려줄게(publish)
@@ -547,5 +549,3 @@ increment();
 
 console.log(store.getState());
 ```
-
-> [참고](https://gist.github.com/ibare/1ed63de0c09c94a7ac79713d57b80f8d)
