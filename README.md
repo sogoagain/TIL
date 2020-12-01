@@ -42,6 +42,7 @@
 
 ### Project
 
+- [천 일 동안](https://github.com/sogoagain/for-thousand-days) (2020년)
 - [Scrambling Text](https://github.com/sogoagain/scrambling-text-js) (2020년)
 - [창업하자! 아이디어는 내게 맡겨!](https://github.com/sogoagain/idea-box-frontend) (2020년)
   - [Front-end](https://github.com/sogoagain/idea-box-frontend)
